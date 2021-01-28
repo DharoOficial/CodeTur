@@ -10,3 +10,15 @@ C:\Users\mercatudo\Documents\trabs_API\CodeTur\CodeTur.Dominio\obj\Debug\netcore
 C:\Users\mercatudo\Documents\trabs_API\CodeTur\CodeTur.Dominio\obj\Debug\netcoreapp3.1\CodeTur.Dominio.csproj.CopyComplete
 C:\Users\mercatudo\Documents\trabs_API\CodeTur\CodeTur.Dominio\obj\Debug\netcoreapp3.1\CodeTur.Dominio.dll
 C:\Users\mercatudo\Documents\trabs_API\CodeTur\CodeTur.Dominio\obj\Debug\netcoreapp3.1\CodeTur.Dominio.pdb
+C:\Users\23788831880\Documents\CodeTur\CodeTur\CodeTur.Dominio\bin\Debug\netcoreapp3.1\CodeTur.Dominio.deps.json
+C:\Users\23788831880\Documents\CodeTur\CodeTur\CodeTur.Dominio\bin\Debug\netcoreapp3.1\CodeTur.Dominio.dll
+C:\Users\23788831880\Documents\CodeTur\CodeTur\CodeTur.Dominio\bin\Debug\netcoreapp3.1\CodeTur.Dominio.pdb
+C:\Users\23788831880\Documents\CodeTur\CodeTur\CodeTur.Dominio\bin\Debug\netcoreapp3.1\CodeTur.Comum.dll
+C:\Users\23788831880\Documents\CodeTur\CodeTur\CodeTur.Dominio\bin\Debug\netcoreapp3.1\CodeTur.Comum.pdb
+C:\Users\23788831880\Documents\CodeTur\CodeTur\CodeTur.Dominio\obj\Debug\netcoreapp3.1\CodeTur.Dominio.csprojAssemblyReference.cache
+C:\Users\23788831880\Documents\CodeTur\CodeTur\CodeTur.Dominio\obj\Debug\netcoreapp3.1\CodeTur.Dominio.AssemblyInfoInputs.cache
+C:\Users\23788831880\Documents\CodeTur\CodeTur\CodeTur.Dominio\obj\Debug\netcoreapp3.1\CodeTur.Dominio.AssemblyInfo.cs
+C:\Users\23788831880\Documents\CodeTur\CodeTur\CodeTur.Dominio\obj\Debug\netcoreapp3.1\CodeTur.Dominio.csproj.CoreCompileInputs.cache
+C:\Users\23788831880\Documents\CodeTur\CodeTur\CodeTur.Dominio\obj\Debug\netcoreapp3.1\CodeTur.Dominio.csproj.CopyComplete
+C:\Users\23788831880\Documents\CodeTur\CodeTur\CodeTur.Dominio\obj\Debug\netcoreapp3.1\CodeTur.Dominio.dll
+C:\Users\23788831880\Documents\CodeTur\CodeTur\CodeTur.Dominio\obj\Debug\netcoreapp3.1\CodeTur.Dominio.pdb

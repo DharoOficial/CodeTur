@@ -11,6 +11,18 @@
           "lib/netstandard2.0/Flunt.dll": {}
         }
       },
+      "Flunt.Br/1.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Flunt": "1.0.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/Flunt.Br.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Flunt.Br.dll": {}
+        }
+      },
       "CodeTur.Comum/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -39,6 +51,19 @@
         "lib/netstandard2.0/Flunt.dll"
       ]
     },
+    "Flunt.Br/1.4.0": {
+      "sha512": "piynUU5SzU/rafD2qaSeila0jW2D47wifBD34pLXdV/sCh7IbCPHfDuuwnONdcansLY5P4a0fdelGkL7Vv4jHw==",
+      "type": "package",
+      "path": "flunt.br/1.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "flunt-icon-br_compressed.png",
+        "flunt.br.1.4.0.nupkg.sha512",
+        "flunt.br.nuspec",
+        "lib/netstandard2.0/Flunt.Br.dll"
+      ]
+    },
     "CodeTur.Comum/1.0.0": {
       "type": "project",
       "path": "../CodeTur.Comum/CodeTur.Comum.csproj",
@@ -48,23 +73,24 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "CodeTur.Comum >= 1.0.0",
-      "Flunt >= 1.0.5"
+      "Flunt >= 1.0.5",
+      "Flunt.Br >= 1.4.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mercatudo\\.nuget\\packages\\": {}
+    "C:\\Users\\23788831880\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur.Dominio\\CodeTur.Dominio.csproj",
+      "projectUniqueName": "C:\\Users\\23788831880\\Documents\\CodeTur\\CodeTur\\CodeTur.Dominio\\CodeTur.Dominio.csproj",
       "projectName": "CodeTur.Dominio",
-      "projectPath": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur.Dominio\\CodeTur.Dominio.csproj",
-      "packagesPath": "C:\\Users\\mercatudo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur.Dominio\\obj\\",
+      "projectPath": "C:\\Users\\23788831880\\Documents\\CodeTur\\CodeTur\\CodeTur.Dominio\\CodeTur.Dominio.csproj",
+      "packagesPath": "C:\\Users\\23788831880\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\23788831880\\Documents\\CodeTur\\CodeTur\\CodeTur.Dominio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mercatudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\23788831880\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -78,8 +104,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj": {
-              "projectPath": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj"
+            "C:\\Users\\23788831880\\Documents\\CodeTur\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj": {
+              "projectPath": "C:\\Users\\23788831880\\Documents\\CodeTur\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj"
             }
           }
         }
@@ -97,6 +123,10 @@
           "Flunt": {
             "target": "Package",
             "version": "[1.0.5, )"
+          },
+          "Flunt.Br": {
+            "target": "Package",
+            "version": "[1.4.0, )"
           }
         },
         "imports": [
@@ -114,7 +144,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
