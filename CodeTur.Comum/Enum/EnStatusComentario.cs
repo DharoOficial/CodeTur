@@ -4,7 +4,9 @@ using System.Text;
 
 namespace CodeTur.Comum.Enum
 {
-    class EnStatusComentario
+    public enum EnStatusComentario
     {
+        Publicado = 1,
+        Inapropriado = 2
     }
 }
