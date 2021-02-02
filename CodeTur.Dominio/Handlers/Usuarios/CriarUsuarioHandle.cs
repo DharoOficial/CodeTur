@@ -1,13 +1,12 @@
-﻿using CodeTur.Comum.Commands;
+﻿
+
+using CodeTur.Comum.Commands;
 using CodeTur.Comum.Handlers.Contracts;
 using CodeTur.Comum.Util;
 using CodeTur.Dominio.Commands.Usuario;
 using CodeTur.Dominio.Entidades;
 using CodeTur.Dominio.Repositorios;
 using Flunt.Notifications;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CodeTur.Dominio.Handlers.Usuarios
 {
@@ -25,13 +24,12 @@ namespace CodeTur.Dominio.Handlers.Usuarios
             if (command.Invalid)
                 return new GerencCommandResult(false, "informe corretamente os dados", command.Notifications);
             var usarioExiste = _usuarioRepositorio.BuscarPorEmail(command.Email);
-            if(usarioExiste != null)
+            if (usarioExiste != null)
                 return new GerencCommandResult(false, "Email ja cadastrado, informe outro email", null);
 
-            command.Senha = Senha.CriptografarSenha(command.Senha);
-
-            var usuario = Usuario(command.Nome, command.Email, command.Senha, command.TipoUsuario);
-
+            command.Senha = Senha.Criptografar(command.Senha);
+                
+            var usuario = new Usuario(command.Nome, command.Email, command.Senha, command.TipoUsuario);
             if (!string.IsNullOrEmpty(command.Telefone))
                 usuario.AdicionarTelefone(command.Telefone);
 
@@ -40,7 +38,7 @@ namespace CodeTur.Dominio.Handlers.Usuarios
 
             _usuarioRepositorio.Adicionar(usuario);
 
-            return new GerencCommandResult(true, "Usuario", "Token");
+            return new GerencCommandResult(true, "Usuario", usuario);
 
         }
 

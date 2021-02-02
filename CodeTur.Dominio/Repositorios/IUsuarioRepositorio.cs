@@ -9,7 +9,6 @@ namespace CodeTur.Dominio.Repositorios
     {
         void Adicionar(Usuario usuario);
         void Alterar(Usuario usuario);
-        void AlterarSenha(Usuario usuario);
         Usuario BuscarPorEmail(string email);
         Usuario BuscarPorId(Guid id);
         ICollection<Usuario> Listar(bool? ativo = null);

@@ -7,6 +7,12 @@ namespace CodeTur.Dominio.Entidades
 {
     public class Usuario : Entidade
     {
+
+        public string Nome { get; private set; }
+        public string Email { get; private set; }
+        public string Senha { get; private set; }
+        public string Telefone { get; private set; }
+        public EnTipoUsuario TipoUsuario { get; private set; }
         
         public Usuario( string nome, string email, string senha, EnTipoUsuario tipoUsuario)
         {
@@ -18,20 +24,15 @@ namespace CodeTur.Dominio.Entidades
                 .HasMinLen(senha, 3, "Senha", "A senha deve ter no minimo 6 caracteres")
                 .HasMaxLen(senha, 40, "Senha", "A senha deve ter no maximo 12 caracteres")
                 );
-            if(Valid)
-            { 
-            Nome = nome;
-            Email = email;
-            Senha = senha;
-            TipoUsuario = tipoUsuario;
-            }
+                if(Valid)
+                { 
+                Nome = nome;
+                Email = email;
+                Senha = senha;
+                TipoUsuario = tipoUsuario;
+                }
         }
 
-        public string Nome { get; private set; }
-        public string Email { get; private set; }
-        public string Senha { get; private set; }
-        public string Telefone { get; private set; }
-        public EnTipoUsuario TipoUsuario { get; private set; }
 
         public void AlterarUsuario(string nome, string email)
         {

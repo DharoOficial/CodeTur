@@ -16,3 +16,9 @@ C:\Users\23788831880\Documents\CodeTur\CodeTur\CodeTur.Comum\obj\Debug\netcoreap
 C:\Users\23788831880\Documents\CodeTur\CodeTur\CodeTur.Comum\obj\Debug\netcoreapp3.1\CodeTur.Comum.csproj.CoreCompileInputs.cache
 C:\Users\23788831880\Documents\CodeTur\CodeTur\CodeTur.Comum\obj\Debug\netcoreapp3.1\CodeTur.Comum.dll
 C:\Users\23788831880\Documents\CodeTur\CodeTur\CodeTur.Comum\obj\Debug\netcoreapp3.1\CodeTur.Comum.pdb
+C:\Users\23788831880\Documents\CodeTur(1)\CodeTur\CodeTur.Comum\obj\Debug\netcoreapp3.1\CodeTur.Comum.csprojAssemblyReference.cache
+C:\Users\23788831880\Documents\CodeTur(1)\CodeTur\CodeTur.Comum\obj\Debug\netcoreapp3.1\CodeTur.Comum.AssemblyInfoInputs.cache
+C:\Users\23788831880\Documents\CodeTur(1)\CodeTur\CodeTur.Comum\obj\Debug\netcoreapp3.1\CodeTur.Comum.AssemblyInfo.cs
+C:\Users\23788831880\Documents\CodeTur(1)\CodeTur\CodeTur.Comum\obj\Debug\netcoreapp3.1\CodeTur.Comum.csproj.CoreCompileInputs.cache
+C:\Users\23788831880\Documents\CodeTur(1)\CodeTur\CodeTur.Comum\obj\Debug\netcoreapp3.1\CodeTur.Comum.dll
+C:\Users\23788831880\Documents\CodeTur(1)\CodeTur\CodeTur.Comum\obj\Debug\netcoreapp3.1\CodeTur.Comum.pdb
