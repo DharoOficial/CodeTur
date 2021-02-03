@@ -2,6 +2,7 @@
 using CodeTur.Comum.Enum;
 using Flunt.Br.Extensions;
 using Flunt.Validations;
+using System.Collections.Generic;
 
 namespace CodeTur.Dominio.Entidades
 {
@@ -13,7 +14,8 @@ namespace CodeTur.Dominio.Entidades
         public string Senha { get; private set; }
         public string Telefone { get; private set; }
         public EnTipoUsuario TipoUsuario { get; private set; }
-        
+        public IReadOnlyCollection<Comentario> Comentarios { get; set; }
+
         public Usuario( string nome, string email, string senha, EnTipoUsuario tipoUsuario)
         {
             AddNotifications ( new Contract()

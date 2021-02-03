@@ -16,8 +16,8 @@ namespace CodeTur.Comum.Util
         }
         public static void Gerar()
         {
-            string caracteres = "";
-            string;
+            //string caracteres = "";
+            //string;
         }
     }
 }

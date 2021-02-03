@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {
+    "net5.0": {
       "BCrypt.Net-Core/1.6.0": {
         "type": "package",
         "compile": {
@@ -60,37 +60,37 @@
     }
   },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": [
+    "net5.0": [
       "BCrypt.Net-Core >= 1.6.0",
       "Flunt >= 1.0.5"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\23788831880\\.nuget\\packages\\": {}
+    "C:\\Users\\mercatudo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\23788831880\\Documents\\CodeTur(1)\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj",
+      "projectUniqueName": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj",
       "projectName": "CodeTur.Comum",
-      "projectPath": "C:\\Users\\23788831880\\Documents\\CodeTur(1)\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj",
-      "packagesPath": "C:\\Users\\23788831880\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\23788831880\\Documents\\CodeTur(1)\\CodeTur\\CodeTur.Comum\\obj\\",
+      "projectPath": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj",
+      "packagesPath": "C:\\Users\\mercatudo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur.Comum\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\23788831880\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mercatudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "netcoreapp3.1"
+        "net5.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "projectReferences": {}
         }
       },
@@ -101,8 +101,8 @@
       }
     },
     "frameworks": {
-      "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
+      "net5.0": {
+        "targetAlias": "net5.0",
         "dependencies": {
           "BCrypt.Net-Core": {
             "target": "Package",
@@ -128,7 +128,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
