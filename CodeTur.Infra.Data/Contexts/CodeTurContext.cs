@@ -54,14 +54,34 @@ namespace CodeTur.Infra.Data.Contexts
             modelBuilder.Entity<Pacote>().Property(p => p.Titulo).IsRequired();
 
             modelBuilder.Entity<Pacote>().ToTable("Pacote");
-            modelBuilder.Entity<Pacote>().Property(p => p.Descricao).HasMaxLength(50);
-            modelBuilder.Entity<Pacote>().Property(p => p.Titulo).HasColumnType("Varchar(50)");
-            modelBuilder.Entity<Pacote>().Property(p => p.Titulo).IsRequired();
+            modelBuilder.Entity<Pacote>().Property(p => p.Descricao).HasMaxLength(500);
+            modelBuilder.Entity<Pacote>().Property(p => p.Descricao).HasColumnType("Varchar(500)");
+            modelBuilder.Entity<Pacote>().Property(p => p.Descricao).IsRequired();
 
             modelBuilder.Entity<Pacote>().ToTable("Pacote");
-            modelBuilder.Entity<Pacote>().Property(p => p.Titulo).HasMaxLength(50);
-            modelBuilder.Entity<Pacote>().Property(p => p.Titulo).HasColumnType("Varchar(50)");
-            modelBuilder.Entity<Pacote>().Property(p => p.Titulo).IsRequired();
+            modelBuilder.Entity<Pacote>().Property(p => p.Imagem).HasMaxLength(500);
+            modelBuilder.Entity<Pacote>().Property(p => p.Imagem).HasColumnType("Varchar(500)");
+
+            #endregion
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Ignore<Notification>();
+            #region
+            modelBuilder.Entity<Comentario>().ToTable("Pacote");
+            modelBuilder.Entity<Comentario>().Property(p => p.Texto).HasMaxLength(1000);
+            modelBuilder.Entity<Comentario>().Property(p => p.Texto).HasColumnType("Varchar(1000)");
+            modelBuilder.Entity<Comentario>().Property(p => p.Texto).IsRequired();
+
+            modelBuilder.Entity<Comentario>().ToTable("Pacote");
+            modelBuilder.Entity<Comentario>().Property(p => p.Sentimento).HasMaxLength(50);
+            modelBuilder.Entity<Comentario>().Property(p => p.Sentimento).HasColumnType("Varchar(50)");
+            modelBuilder.Entity<Comentario>().Property(p => p.Sentimento).IsRequired();
+
+            modelBuilder.Entity<Comentario>().ToTable("Pacote");
+            modelBuilder.Entity<Comentario>().Property(p => p.Status).HasColumnType("BOOL");
+            modelBuilder.Entity<Comentario>().Property(p => p.Status).IsRequired();
+
+            modelBuilder.Entity<Comentario>().HasOne(c => c.Usuario).WithMany(u => u.Comentarios).HasForeignKey(fk => fk.IdUsuario);
 
             #endregion
             base.OnModelCreating(modelBuilder);
