@@ -3,3 +3,8 @@ C:\Users\mercatudo\Documents\trabs_API\CodeTur\CodeTur.Testes\obj\Debug\net5.0\C
 C:\Users\mercatudo\Documents\trabs_API\CodeTur\CodeTur.Testes\obj\Debug\net5.0\CodeTur.Testes.AssemblyInfoInputs.cache
 C:\Users\mercatudo\Documents\trabs_API\CodeTur\CodeTur.Testes\obj\Debug\net5.0\CodeTur.Testes.AssemblyInfo.cs
 C:\Users\mercatudo\Documents\trabs_API\CodeTur\CodeTur.Testes\obj\Debug\net5.0\CodeTur.Testes.csproj.CoreCompileInputs.cache
+C:\Users\23788831880\Documents\CodeTur(1)\CodeTur\CodeTur.Testes\obj\Debug\net5.0\CodeTur.Testes.csprojAssemblyReference.cache
+C:\Users\23788831880\Documents\CodeTur(1)\CodeTur\CodeTur.Testes\obj\Debug\net5.0\CodeTur.Testes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\23788831880\Documents\CodeTur(1)\CodeTur\CodeTur.Testes\obj\Debug\net5.0\CodeTur.Testes.AssemblyInfoInputs.cache
+C:\Users\23788831880\Documents\CodeTur(1)\CodeTur\CodeTur.Testes\obj\Debug\net5.0\CodeTur.Testes.AssemblyInfo.cs
+C:\Users\23788831880\Documents\CodeTur(1)\CodeTur\CodeTur.Testes\obj\Debug\net5.0\CodeTur.Testes.csproj.CoreCompileInputs.cache

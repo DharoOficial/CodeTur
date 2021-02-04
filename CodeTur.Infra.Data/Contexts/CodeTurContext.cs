@@ -45,6 +45,26 @@ namespace CodeTur.Infra.Data.Contexts
             modelBuilder.Entity<Usuario>().Property(x => x.DataCriacao).HasColumnType("DateTime");
             #endregion
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Ignore<Notification>();
+            #region
+            modelBuilder.Entity<Pacote>().ToTable("Pacote");
+            modelBuilder.Entity<Pacote>().Property(p => p.Titulo).HasMaxLength(50);
+            modelBuilder.Entity<Pacote>().Property(p => p.Titulo).HasColumnType("Varchar(50)");
+            modelBuilder.Entity<Pacote>().Property(p => p.Titulo).IsRequired();
+
+            modelBuilder.Entity<Pacote>().ToTable("Pacote");
+            modelBuilder.Entity<Pacote>().Property(p => p.Descricao).HasMaxLength(50);
+            modelBuilder.Entity<Pacote>().Property(p => p.Titulo).HasColumnType("Varchar(50)");
+            modelBuilder.Entity<Pacote>().Property(p => p.Titulo).IsRequired();
+
+            modelBuilder.Entity<Pacote>().ToTable("Pacote");
+            modelBuilder.Entity<Pacote>().Property(p => p.Titulo).HasMaxLength(50);
+            modelBuilder.Entity<Pacote>().Property(p => p.Titulo).HasColumnType("Varchar(50)");
+            modelBuilder.Entity<Pacote>().Property(p => p.Titulo).IsRequired();
+
+            #endregion
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
