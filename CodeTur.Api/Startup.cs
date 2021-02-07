@@ -1,6 +1,8 @@
+using CodeTur.Dominio.Handlers.Pacotes;
 using CodeTur.Dominio.Handlers.Usuarios;
 using CodeTur.Dominio.Repositorios;
 using CodeTur.Infra.Data.Contexts;
+using CodeTur.Infra.Data.Repositorios;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -62,6 +64,19 @@ namespace CodeTur.Api
             services.AddSwaggerGen(o =>
                 o.SwaggerDoc("v1", new OpenApiInfo { Title = "Api CodeTur", Version = "V1" })
             );
+
+            #region Injecao de dependencias Usuario
+            services.AddTransient<IUsuarioRepositorio, UsuarioRepositorio>();
+            services.AddTransient<CriarUsuarioHandle, CriarUsuarioHandle>();
+            services.AddTransient<LogarHandle, LogarHandle>();
+            #endregion
+
+            #region Injecao de dependencias Pacote
+            services.AddTransient<IPacotesRespositorio, PacoteRepositorio>();
+            services.AddTransient<CriarPacoteCommandHandle, CriarPacoteCommandHandle>();
+            services.AddTransient<ListarPacoteQueryHandlers, ListarPacoteQueryHandlers>();
+            #endregion
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

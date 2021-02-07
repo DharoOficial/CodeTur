@@ -9,6 +9,10 @@ namespace CodeTur.Dominio.Commands.Pacote
 {
     public class CriarPacoteCommand : Notifiable, ICommand
     {
+        public CriarPacoteCommand()
+        {
+
+        }
         public CriarPacoteCommand(string titulo, string descricao, string imagem, bool ativo)
         {
             Titulo = titulo;
@@ -16,10 +20,10 @@ namespace CodeTur.Dominio.Commands.Pacote
             Imagem = imagem;
             Ativo = ativo;
         }
-        public string Titulo { get; private set; }
-        public string Descricao { get; private set; }
-        public string Imagem { get; private set; }
-        public bool Ativo { get; private set; }
+        public string Titulo { get; set; }
+        public string Descricao { get; set; }
+        public string Imagem { get; set; }
+        public bool Ativo { get; set; }
         public void Validar()
         {
             AddNotifications(new Contract()

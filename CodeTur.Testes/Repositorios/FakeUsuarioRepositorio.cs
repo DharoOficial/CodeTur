@@ -9,7 +9,7 @@ namespace CodeTur.Testes.Repositorios
 {
     public class FakeUsuarioRepositorio : IUsuarioRepositorio
     {
-        List<Usuario> Usuarios = new List<Usuario>()
+        List<Usuario> _usuarios = new List<Usuario>()
        {
             new Usuario("Erick", "email@email.com", "123456", Comum.Enum.EnTipoUsuario.comun)
        };
@@ -18,7 +18,7 @@ namespace CodeTur.Testes.Repositorios
 
         public void Adicionar(Usuario usuario)
         {
-            Usuarios.Add(usuario);
+            _usuarios.Add(usuario);
         }
 
                 public void Alterar(Usuario usuario)
@@ -28,12 +28,12 @@ namespace CodeTur.Testes.Repositorios
 
         public Usuario BuscarPorEmail(string email)
         {
-            return Usuarios.FirstOrDefault(x => x.Email == email);
+            return _usuarios.FirstOrDefault(x => x.Email == email);
         }
 
         public Usuario BuscarPorId(Guid id)
         {
-            return Usuarios.FirstOrDefault(x => x.Id == id);
+            return _usuarios.FirstOrDefault(x => x.Id == id);
         }
 
         public ICollection<Usuario> Listar(bool? ativo = null)

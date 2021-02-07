@@ -15,10 +15,10 @@ namespace CodeTur.Dominio.Entidades
         {
             AddNotifications(new Contract()
                 .Requires()
-                .IsNotNullOrEmpty(Texto, "Texto", "Informe o Texto do comentário")
-                .IsNotNullOrEmpty(Sentimento, "Sentimento", "Informe o sentimento do comentário")
-                .AreNotEquals(IdUsuario, Guid.Empty, "IdUsuario", "Informe o Id do Usuário do comentário")
-                .AreNotEquals(IdPacote, Guid.Empty, "IdPacote", "Informe o Id do Pacote do comentário")
+                .IsNotNullOrEmpty(texto, "Texto", "Informe o Texto do comentário")
+                .IsNotNullOrEmpty(sentimento, "Sentimento", "Informe o sentimento do comentário")
+                .AreNotEquals(idUsuario, Guid.Empty, "IdUsuario", "Informe o Id do Usuário do comentário")
+                .AreNotEquals(idPacote, Guid.Empty, "IdPacote", "Informe o Id do Pacote do comentário")
             );
 
             if (Valid)

@@ -22,8 +22,11 @@ namespace CodeTur.Infra.Data.Contexts
         {
             modelBuilder.Ignore<Notification>();
             #region Mapeamento Tabela Usuario
+
             modelBuilder.Entity<Usuario>().ToTable("Usuarios");
+
             modelBuilder.Entity<Usuario>().Property(x => x.Id);
+                
             modelBuilder.Entity<Usuario>().Property(x => x.Nome).HasMaxLength(40);
             modelBuilder.Entity<Usuario>().Property(x => x.Nome).HasColumnType("varchar(40)");
             modelBuilder.Entity<Usuario>().Property(x => x.Nome).IsRequired();
@@ -39,7 +42,7 @@ namespace CodeTur.Infra.Data.Contexts
             modelBuilder.Entity<Usuario>().Property(x => x.Telefone).HasMaxLength(11);
             modelBuilder.Entity<Usuario>().Property(x => x.Telefone).HasColumnType("varchar(11)");
 
-            modelBuilder.Entity<Usuario>().HasMany(c => c.Comentarios).WithOne(u => u.Usuario).HasForeignKey(fk => fk.IdUsuario);
+            modelBuilder.Entity<Usuario>().HasMany(c => c.Comentarios).WithOne(e => e.Usuario).HasForeignKey(x => x.IdUsuario);
 
             modelBuilder.Entity<Usuario>().Property(x => x.DataAlteracao).HasColumnType("DateTime");
             modelBuilder.Entity<Usuario>().Property(x => x.DataCriacao).HasColumnType("DateTime");
@@ -47,42 +50,56 @@ namespace CodeTur.Infra.Data.Contexts
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Ignore<Notification>();
-            #region
+            #region Mapeamento Pacote
+
             modelBuilder.Entity<Pacote>().ToTable("Pacote");
-            modelBuilder.Entity<Pacote>().Property(p => p.Titulo).HasMaxLength(50);
-            modelBuilder.Entity<Pacote>().Property(p => p.Titulo).HasColumnType("Varchar(50)");
+
+            modelBuilder.Entity<Pacote>().Property(x => x.Id);
+
+            modelBuilder.Entity<Pacote>().Property(p => p.Titulo).HasMaxLength(120);
+            modelBuilder.Entity<Pacote>().Property(p => p.Titulo).HasColumnType("Varchar(120)");
             modelBuilder.Entity<Pacote>().Property(p => p.Titulo).IsRequired();
 
             modelBuilder.Entity<Pacote>().ToTable("Pacote");
-            modelBuilder.Entity<Pacote>().Property(p => p.Descricao).HasMaxLength(500);
-            modelBuilder.Entity<Pacote>().Property(p => p.Descricao).HasColumnType("Varchar(500)");
+            modelBuilder.Entity<Pacote>().Property(p => p.Descricao).HasColumnType("Text");
             modelBuilder.Entity<Pacote>().Property(p => p.Descricao).IsRequired();
 
             modelBuilder.Entity<Pacote>().ToTable("Pacote");
             modelBuilder.Entity<Pacote>().Property(p => p.Imagem).HasMaxLength(500);
             modelBuilder.Entity<Pacote>().Property(p => p.Imagem).HasColumnType("Varchar(500)");
+            modelBuilder.Entity<Pacote>().Property(p => p.Imagem).IsRequired();
+
+            modelBuilder.Entity<Pacote>().Property(p => p.Ativo).HasColumnType("bit");
+
+            modelBuilder.Entity<Pacote>().HasMany(c => c.Comentarios).WithOne(e => e.Pacote).HasForeignKey(x => x.IdPacote);
+
+
 
             #endregion
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Ignore<Notification>();
-            #region
+            #region Mapeamento Comentario
+
             modelBuilder.Entity<Comentario>().ToTable("Pacote");
+
+            modelBuilder.Entity<Comentario>().Property(x => x.Id);
+
             modelBuilder.Entity<Comentario>().Property(p => p.Texto).HasMaxLength(1000);
             modelBuilder.Entity<Comentario>().Property(p => p.Texto).HasColumnType("Varchar(1000)");
             modelBuilder.Entity<Comentario>().Property(p => p.Texto).IsRequired();
 
-            modelBuilder.Entity<Comentario>().ToTable("Pacote");
             modelBuilder.Entity<Comentario>().Property(p => p.Sentimento).HasMaxLength(50);
             modelBuilder.Entity<Comentario>().Property(p => p.Sentimento).HasColumnType("Varchar(50)");
             modelBuilder.Entity<Comentario>().Property(p => p.Sentimento).IsRequired();
 
-            modelBuilder.Entity<Comentario>().ToTable("Pacote");
-            modelBuilder.Entity<Comentario>().Property(p => p.Status).HasColumnType("BOOL");
-            modelBuilder.Entity<Comentario>().Property(p => p.Status).IsRequired();
+            modelBuilder.Entity<Comentario>().Property(p => p.Status).HasColumnType("int");
 
-            modelBuilder.Entity<Comentario>().HasOne(c => c.Usuario).WithMany(u => u.Comentarios).HasForeignKey(fk => fk.IdUsuario);
+            modelBuilder.Entity<Usuario>().Property(t => t.DataCriacao).HasColumnType("DateTime");
+            modelBuilder.Entity<Usuario>().Property(t => t.DataCriacao).HasDefaultValueSql("GetDate()");
 
+            modelBuilder.Entity<Usuario>().Property(t => t.DataAlteracao).HasColumnType("DateTime");
+            modelBuilder.Entity<Usuario>().Property(t => t.DataAlteracao).HasDefaultValueSql("GetDate()");
             #endregion
             base.OnModelCreating(modelBuilder);
         }

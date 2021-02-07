@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodeTur.Comum.Handlers.Contracts
 {
-    public interface IHandler<T> where T : ICommand
+    public interface IHandlerCommand<T> where T : ICommand
     {
         ICommandResult Handle(T command);
     }

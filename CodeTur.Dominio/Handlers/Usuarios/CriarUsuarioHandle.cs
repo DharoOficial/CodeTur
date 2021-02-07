@@ -10,7 +10,7 @@ using Flunt.Notifications;
 
 namespace CodeTur.Dominio.Handlers.Usuarios
 {
-    public class CriarUsuarioHandle : Notifiable, IHandler<CriarUsuarioCommand>
+    public class CriarUsuarioHandle : Notifiable, IHandlerCommand<CriarUsuarioCommand>
     {
         private readonly IUsuarioRepositorio _usuarioRepositorio;
 

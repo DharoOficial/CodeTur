@@ -14,10 +14,17 @@ namespace CodeTur.Comum.Util
         {
             return BCrypt.Net.BCrypt.Verify(senha, hash);
         }
-        public static void Gerar()
+        public static string Gerar()
         {
-            //string caracteres = "";
-            //string;
+            string caracteres = "abcdefghjkmnpqrstuvwxyz023456789";
+            string senha = "";
+            Random random = new Random();
+            for (int f = 0; f < 8; f++)
+            {
+                senha = senha + caracteres.Substring(random.Next(0, caracteres.Length - 1), 1);
+            }
+
+            return senha;
         }
     }
 }
