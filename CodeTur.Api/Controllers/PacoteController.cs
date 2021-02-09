@@ -19,15 +19,29 @@ namespace CodeTur.Api.Controllers
     [ApiController]
     public class PacoteController : ControllerBase
     {
+
+        /// <summary>
+        /// Este metodo Cria Pacotes
+        /// </summary>
+        /// <returns>Retorna o Pacote</returns>
+        /// <response code="200">Retorna o item cadastrados</response>
         [HttpPost]
-        [Authorize (Roles = "Admin")]
-        public GerencCommandResult Create(CriarPacoteCommand command,
-                                                 [FromServices] CriarPacoteCommandHandle handle)
+        [Authorize(Roles = "Admin")]        
+        public GerencCommandResult Create(
+            [FromBody] CriarPacoteCommand command,
+            [FromServices] CriarPacoteCommandHandle handle)
         {
             return (GerencCommandResult)handle.Handle(command);
         }
 
-        [HttpPost]
+        [HttpPut("{id}")]
+        [Authorize(Roles = "Admin")]
+        public  GerencCommandResult Update (Guid id,
+            [FromBody] AlterarPacoteCommand command,
+            [FromServices] AlterarPacoteHandle
+            )
+
+        [HttpPost()]
         [Authorize]
         public  GenericQueryResult GetAll([FromServices] ListarPacoteQueryHandlers handle)
         {

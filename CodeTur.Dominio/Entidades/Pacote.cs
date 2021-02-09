@@ -45,6 +45,21 @@ namespace CodeTur.Dominio.Entidades
                 _comentarios.Add(comentario);
         }
 
+        public void AlterarPacote(string titulo, string descricao)
+        {
+            AddNotifications(new Contract()
+                .Requires()
+                .IsNotNullOrEmpty(titulo, "Titulo", "Informe o Título do pacote")
+                .IsNotNullOrEmpty(descricao, "Descricao", "Informe o Descrição do pacote")
+            );
+            if(Valid)
+            {
+                Titulo = titulo;
+                Descricao = descricao;
+            }
+        }
+
+
         public void AtivarPacote()
         {
             Ativo = true;

@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "qeG8jbwVU56jqip2seblTdt/dHHXjipuuXLnaZNY2ZndZjX8ZS3FQ0659lIshZDsmxMdKtLUXypR5v3LuRzSMA==",
+  "dgSpecHash": "LJJngTPMDsqdo1Uvf6IXte/y35stFWg8Iv7OtClKsAmYqJyXwoznCoufn/0kS/uhSfSqcljPtJEiBdomTYF0LQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur(1)\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj",
+  "projectFilePath": "C:\\Users\\23788831880\\Documents\\CodeTur(1)\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\mercatudo\\.nuget\\packages\\bcrypt.net-core\\1.6.0\\bcrypt.net-core.1.6.0.nupkg.sha512",
-    "C:\\Users\\mercatudo\\.nuget\\packages\\flunt\\1.0.5\\flunt.1.0.5.nupkg.sha512"
+    "C:\\Users\\23788831880\\.nuget\\packages\\bcrypt.net-core\\1.6.0\\bcrypt.net-core.1.6.0.nupkg.sha512",
+    "C:\\Users\\23788831880\\.nuget\\packages\\flunt\\1.0.5\\flunt.1.0.5.nupkg.sha512"
   ],
   "logs": []
 }

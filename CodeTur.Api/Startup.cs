@@ -43,7 +43,7 @@ namespace CodeTur.Api
                 options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
             });
 
-            services.AddDbContext<CodeTurContext>(o => o.UseSqlServer("Data Source=DESKTOP-TSI8JUU\\SQLEXPRESS ;Initial Catalog=CodeTur_Dev;user id=sa; password=sa132"));
+            services.AddDbContext<CodeTurContext>(o => o.UseSqlServer("Data Source=DESKTOP-VFV613U ;Initial Catalog=CodeTur_Dev;user id=sa; password=sa132"));
 
             // JWT
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -61,9 +61,9 @@ namespace CodeTur.Api
                     };
                 });
 
-            services.AddSwaggerGen(o =>
-                o.SwaggerDoc("v1", new OpenApiInfo { Title = "Api CodeTur", Version = "V1" })
-            );
+            services.AddSwaggerGen(o => {
+                o.SwaggerDoc("v1", new OpenApiInfo { Title = "Api CodeTur", Version = "v1" });
+            });
 
             #region Injecao de dependencias Usuario
             services.AddTransient<IUsuarioRepositorio, UsuarioRepositorio>();
@@ -79,15 +79,22 @@ namespace CodeTur.Api
 
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
+            
                 app.UseSwagger();
-                app.UseSwaggerUI(o => o.SwaggerEndpoint("/swagger/v1/swagger.json", "Api CodeTur V1"));
-            }
+
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api CodeTur V1");
+                });
+
+                app.UseRouting();
+                app.UseEndpoints(endpoints =>
+                {
+                    endpoints.MapControllers();
+                });
+            
 
             app.UseHttpsRedirection();
 

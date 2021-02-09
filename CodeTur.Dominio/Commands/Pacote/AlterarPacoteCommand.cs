@@ -10,7 +10,7 @@ namespace CodeTur.Dominio.Commands.Pacote
     public class AlterarPacoteCommand : Notifiable, ICommand
     {
 
-        public Guid Id { get; set; }
+        public Guid IdPacote { get; set; }
         public string Titulo { get; private set; }
         public string Descricao { get; private set; }
         public string Imagem { get; private set; }
