@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CodeTur.Infra.Data.Migrations
 {
     [DbContext(typeof(CodeTurContext))]
-    [Migration("20210208132645_Banco Inicial Usuario")]
-    partial class BancoInicialUsuario
+    [Migration("20210212141535_Banco Inicial")]
+    partial class BancoInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -19,7 +19,7 @@ namespace CodeTur.Infra.Data.Migrations
             modelBuilder
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.2");
+                .HasAnnotation("ProductVersion", "5.0.3");
 
             modelBuilder.Entity("CodeTur.Dominio.Entidades.Comentario", b =>
                 {
@@ -39,23 +39,24 @@ namespace CodeTur.Infra.Data.Migrations
                     b.Property<Guid>("IdUsuario")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("PacoteId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Sentimento")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("varchar(40)");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
                     b.Property<string>("Texto")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("varchar(500)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdUsuario");
+                    b.HasIndex("IdPacote");
 
-                    b.HasIndex("PacoteId");
+                    b.HasIndex("IdUsuario");
 
                     b.ToTable("Comentarios");
                 });
@@ -76,13 +77,18 @@ namespace CodeTur.Infra.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Descricao")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("Text");
 
                     b.Property<string>("Imagem")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("varchar(250)");
 
                     b.Property<string>("Titulo")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(120)
+                        .HasColumnType("varchar(120)");
 
                     b.HasKey("Id");
 
@@ -117,8 +123,8 @@ namespace CodeTur.Infra.Data.Migrations
 
                     b.Property<string>("Senha")
                         .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("varchar(60)");
+                        .HasMaxLength(1000)
+                        .HasColumnType("varchar(MAX)");
 
                     b.Property<string>("Telefone")
                         .HasMaxLength(11)
@@ -137,15 +143,17 @@ namespace CodeTur.Infra.Data.Migrations
 
             modelBuilder.Entity("CodeTur.Dominio.Entidades.Comentario", b =>
                 {
+                    b.HasOne("CodeTur.Dominio.Entidades.Pacote", "Pacote")
+                        .WithMany("Comentarios")
+                        .HasForeignKey("IdPacote")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("CodeTur.Dominio.Entidades.Usuario", "Usuario")
                         .WithMany("Comentarios")
                         .HasForeignKey("IdUsuario")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("CodeTur.Dominio.Entidades.Pacote", "Pacote")
-                        .WithMany("Comentarios")
-                        .HasForeignKey("PacoteId");
 
                     b.Navigation("Pacote");
 

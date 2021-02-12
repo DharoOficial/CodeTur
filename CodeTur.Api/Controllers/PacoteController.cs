@@ -25,6 +25,7 @@ namespace CodeTur.Api.Controllers
         /// </summary>
         /// <returns>Retorna o Pacote</returns>
         /// <response code="200">Retorna o item cadastrados</response>
+        [Route("Create")]
         [HttpPost]
         [Authorize(Roles = "Admin")]        
         public GerencCommandResult Create(
@@ -34,13 +35,54 @@ namespace CodeTur.Api.Controllers
             return (GerencCommandResult)handle.Handle(command);
         }
 
+        [Route("Update")]
         [HttpPut("{id}")]
         [Authorize(Roles = "Admin")]
         public  GerencCommandResult Update (Guid id,
             [FromBody] AlterarPacoteCommand command,
-            [FromServices] AlterarPacoteHandle
+            [FromServices] AlterarPacoteHandler handler
             )
+        {
+            if (id == Guid.Empty)
+                return new GerencCommandResult(false, "Informe o Id do Pacote", "");
+            command.IdPacote = id;
 
+            return (GerencCommandResult)handler.Handle(command);
+        }
+
+        [Route("{id}/image")]
+        [HttpPut("{id}/image")]
+        [Authorize(Roles = "Admin")]
+        public GerencCommandResult UpdateImage(Guid id,
+            [FromBody] AlterarImagemPacoteCommand command,
+            [FromServices] AlterarImagemHandler handler
+        )
+        {
+            if (id == Guid.Empty)
+                return new GerencCommandResult(false, "Informe o Id do Pacote", "");
+
+            command.IdPacote = id;
+
+            return (GerencCommandResult)handler.Handle(command);
+        }
+
+        [Route("{id}/status")]
+        [HttpPut("{id}/status")]
+        [Authorize(Roles = "Admin")]
+        public GerencCommandResult UpdateStatus(Guid id,
+            [FromBody] AlterarStatusCommand command,
+            [FromServices] AlterarStatusHandler handler
+        )
+        {
+            if (id == Guid.Empty)
+                return new GerencCommandResult(false, "Informe o Id do Pacote", "");
+
+            command.IdPacote = id;
+
+            return (GerencCommandResult)handler.Handle(command);
+        }
+
+        [Route("GetAll")]
         [HttpPost()]
         [Authorize]
         public  GenericQueryResult GetAll([FromServices] ListarPacoteQueryHandlers handle)
@@ -51,8 +93,24 @@ namespace CodeTur.Api.Controllers
             {
                 query.Ativo = true;
             }
-            return (GenericQueryResult)handle.Handler(query);
+            return (GenericQueryResult)handle.Handle(query);
 
         }
+
+        [Route("GetById/{id}")]
+        [HttpGet("{id}")]
+        [Authorize]
+        public GerencCommandResult GetById(Guid id, [FromServices] BuscarPacotePorIdQuerryHandler handle)
+        {
+            BuscarPacotesPorId query = new BuscarPacotesPorId();
+
+            var tipoUsuario = HttpContext.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role);
+
+            query.IdPacote = id;
+            query.TipoUsuario = (EnTipoUsuario)Enum.Parse(typeof(EnTipoUsuario), tipoUsuario.Value);
+
+            return (GerencCommandResult)handle.Handle(query);
+        }
+
     }
 }

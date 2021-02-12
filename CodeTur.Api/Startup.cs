@@ -37,13 +37,11 @@ namespace CodeTur.Api
         {
             services.AddControllers().AddNewtonsoftJson(options =>
             {
-                //Correção do erro object cycle
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-                //Remover propriedades nulas
                 options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
             });
 
-            services.AddDbContext<CodeTurContext>(o => o.UseSqlServer("Data Source=DESKTOP-VFV613U ;Initial Catalog=CodeTur_Dev;user id=sa; password=sa132"));
+            services.AddDbContext<CodeTurContext>(o => o.UseSqlServer("Data Source=DESKTOP-TSI8JUU\\SQLEXPRESS ;Initial Catalog=CodeTur;user id=sa; password=sa132"));
 
             // JWT
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -67,14 +65,23 @@ namespace CodeTur.Api
 
             #region Injecao de dependencias Usuario
             services.AddTransient<IUsuarioRepositorio, UsuarioRepositorio>();
-            services.AddTransient<CriarUsuarioHandle, CriarUsuarioHandle>();
             services.AddTransient<LogarHandle, LogarHandle>();
+            services.AddTransient<CriarUsuarioHandle, CriarUsuarioHandle>();
+            services.AddTransient<BuscarUsuarioPorIdQueryHandler, BuscarUsuarioPorIdQueryHandler>();
+            services.AddTransient<AlterarUsuarioHandler, AlterarUsuarioHandler>();
+            services.AddTransient<EsqueciSenhaHadler, EsqueciSenhaHadler>();
+            services.AddTransient<ListarUsuarioQueryHandler, ListarUsuarioQueryHandler>();
+            services.AddTransient<AlterarSenhaHandler, AlterarSenhaHandler>();
             #endregion
 
             #region Injecao de dependencias Pacote
             services.AddTransient<IPacotesRespositorio, PacoteRepositorio>();
             services.AddTransient<CriarPacoteCommandHandle, CriarPacoteCommandHandle>();
             services.AddTransient<ListarPacoteQueryHandlers, ListarPacoteQueryHandlers>();
+            services.AddTransient<BuscarPacotePorIdQuerryHandler, BuscarPacotePorIdQuerryHandler>();
+            services.AddTransient<AlterarPacoteHandler, AlterarPacoteHandler>();
+            services.AddTransient<AlterarImagemHandler, AlterarImagemHandler>();
+            services.AddTransient<AlterarStatusHandler, AlterarStatusHandler>();
             #endregion
 
         }
@@ -88,6 +95,7 @@ namespace CodeTur.Api
                 {
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api CodeTur V1");
                 });
+                
 
                 app.UseRouting();
                 app.UseEndpoints(endpoints =>
@@ -96,11 +104,14 @@ namespace CodeTur.Api
                 });
             
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
-            app.UseCors(c => c.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            app.UseCors(x => x
+               .AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader());
 
             app.UseAuthentication();
 
@@ -112,4 +123,5 @@ namespace CodeTur.Api
             });
         }
     }
+
 }

@@ -1,9 +1,13 @@
 ﻿using CodeTur.Comum.Commands;
+using CodeTur.Comum.Util;
 using CodeTur.Dominio.Commands.Usuario;
 using CodeTur.Dominio.Entidades;
 using CodeTur.Dominio.Handlers.Usuarios;
+using CodeTur.Dominio.Queries.Usuario;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -19,6 +23,24 @@ namespace CodeTur.Api.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
+
+        public IConfiguration Configuration { get; }
+
+        public UsuarioController(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        [Route("users")]
+        [HttpGet]
+        public GerencCommandResult GetAll(
+            [FromServices] ListarUsuarioQueryHandler handler
+        )
+        {
+            var query = new ListaUsuarioResult();
+            return (GerencCommandResult)handler.Handle(query);
+        }
+
         [Route("signup")]
         [HttpPost]
         public GerencCommandResult SignUp(
@@ -29,47 +51,87 @@ namespace CodeTur.Api.Controllers
             return (GerencCommandResult)handle.Handle(command);
         }
 
-        [Route("signup")]
+        [Route("signin")]
         [HttpPost]
-        public GerencCommandResult SignIn(LogarCommand command, [FromServices]LogarHandle handler)
+        public GerencCommandResult SignIn(
+            [FromBody] LogarCommand command,
+            [FromServices] LogarHandle handler
+        )
         {
             var resultado = (GerencCommandResult)handler.Handle(command);
-            return new GerencCommandResult(false, resultado.Mensagem, resultado.Data);
-            
-            if(resultado.Sucesso)
+
+            if (resultado.Sucesso)
             {
-                var token = GenerateJSONWebToken((Usuario)resultado.Data);
-                return new GerencCommandResult(resultado.Sucesso, resultado.Mensagem, new { token = token });
+                Usuario usuario = (Usuario)resultado.Data;
+                var token = new Token(
+                                        Configuration["Token:issuer"],
+                                        Configuration["Token:audience"],
+                                        Configuration["Token:secretKey"]
+                                     )
+                                     .GerarJsonWebToken(
+                                        usuario.Id,
+                                        usuario.Nome,
+                                        usuario.Email,
+                                        usuario.TipoUsuario.ToString()
+                                     );
+
+                return new GerencCommandResult(true, "Usuário logado", new { token = token });
             }
-                
+
+            return resultado;
         }
 
-        private string GenerateJSONWebToken(Usuario userInfo)
+        [Route("users/{id}")]
+        [HttpGet]
+        public GerencCommandResult GetByIdUser(Guid id,
+            [FromServices] BuscarUsuarioPorIdQueryHandler handler
+        )
         {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ChaveSecretaCodeTurSenai132"));
-            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            var query = new BuscarUsuarioPorIdQuery();
+            query.IdUsuario = id;
+            return (GerencCommandResult)handler.Handle(query);
+        }
 
-            // Definimos nossas Claims (dados da sessão) para poderem ser capturadas
-            // a qualquer momento enquanto o Token for ativo
-            var claims = new[] {
-                new Claim(JwtRegisteredClaimNames.FamilyName, userInfo.Nome),
-                new Claim(JwtRegisteredClaimNames.Email, userInfo.Email),
-                new Claim(ClaimTypes.Role, userInfo.TipoUsuario.ToString()),
-                new Claim("role", userInfo.TipoUsuario.ToString()),
-                new Claim(JwtRegisteredClaimNames.Jti, userInfo.Id.ToString())
-            };
+        [Route("reset-password")]
+        [HttpPut]
+        public GerencCommandResult ResetPassword(
+            [FromBody] EsqueciSenhaCommadn command,
+            [FromServices] EsqueciSenhaHadler handler
+        )
+        {
+            var resultado = (GerencCommandResult)handler.Handle(command);
 
-            // Configuramos nosso Token e seu tempo de vida
-            var token = new JwtSecurityToken
-                (
-                    "codetur",
-                    "codetur",
-                    claims,
-                    expires: DateTime.Now.AddMinutes(120),
-                    signingCredentials: credentials
-                );
+            return resultado;
+        }
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
+
+        [Route("update-Passowrd")]
+        [Authorize]
+        [HttpPut]
+
+        public GerencCommandResult UpdatePassword(
+            [FromBody] AlterarSenha command,
+            [FromServices] AlterarSenhaHandler handler
+            )
+        {
+            var idUsuario = HttpContext.User.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Jti);
+            command.IdUsuario = new Guid(idUsuario.Value);
+
+            return (GerencCommandResult)handler.Handle(command);
+        }
+
+        [Route("")]
+        [Authorize]
+        [HttpPut]
+        public GerencCommandResult UpdateAccount(
+           [FromBody] AlterarUsuarioCommand command,
+           [FromServices] AlterarUsuarioHandler handler
+       )
+        {
+            var idUsuario = HttpContext.User.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Jti);
+            command.IdUsuario = new Guid(idUsuario.Value);
+
+            return (GerencCommandResult)handler.Handle(command);
         }
 
     }

@@ -36,8 +36,8 @@ namespace CodeTur.Infra.Data.Contexts
             modelBuilder.Entity<Usuario>().Property(x => x.Email).IsRequired();
             modelBuilder.Entity<Usuario>().HasIndex(x => x.Email).IsUnique();
             //Senha
-            modelBuilder.Entity<Usuario>().Property(x => x.Senha).HasMaxLength(60);
-            modelBuilder.Entity<Usuario>().Property(x => x.Senha).HasColumnType("varchar(60)");
+            modelBuilder.Entity<Usuario>().Property(x => x.Senha).HasMaxLength(1000);
+            modelBuilder.Entity<Usuario>().Property(x => x.Senha).HasColumnType("varchar(MAX)");
             modelBuilder.Entity<Usuario>().Property(x => x.Senha).IsRequired();
             //Telefone
             modelBuilder.Entity<Usuario>().Property(x => x.Telefone).HasMaxLength(11);

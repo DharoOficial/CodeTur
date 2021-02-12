@@ -24,7 +24,7 @@ namespace CodeTur.Dominio.Entidades
                 .HasMaxLen(nome, 40, "Nome", "O nome deve ter no maximo 40 caracteres")
                 .IsEmail(email,"Email", "Informe um email valido")
                 .HasMinLen(senha, 3, "Senha", "A senha deve ter no minimo 6 caracteres")
-                .HasMaxLen(senha, 40, "Senha", "A senha deve ter no maximo 12 caracteres")
+                .HasMaxLen(senha, 1000, "Senha", "A senha deve ter no maximo 12 caracteres")
                 );
                 if(Valid)
                 { 
@@ -57,7 +57,7 @@ namespace CodeTur.Dominio.Entidades
             AddNotifications(new Contract()
                 .Requires()
                 .HasMinLen(senha, 6, "Nome", "A senha deve ter pelo menos 6 caracteres")
-                .HasMaxLen(senha, 12, "Nome", "A senha deve ter no máximo 12 caracteres")
+                .HasMaxLen(senha, 1000, "Nome", "A senha deve ter no máximo 12 caracteres")
             );
 
             if (Valid)
@@ -77,6 +77,16 @@ namespace CodeTur.Dominio.Entidades
             {
                 Telefone = telefone;
             }
+        }
+        public void AlterarTelefone(string telefone)
+        {
+            AddNotifications(new Contract()
+                .Requires()
+                .IsNewFormatCellPhone(telefone, "Telefone", "Informe um Telefone Válido")
+            );
+
+            if (Valid)
+                Telefone = telefone;
         }
     }
 }

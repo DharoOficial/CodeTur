@@ -1,4 +1,4 @@
-﻿using CodeTur.Comum.Commands;
+﻿    using CodeTur.Comum.Commands;
 using Flunt.Notifications;
 using Flunt.Validations;
 using System;
@@ -9,13 +9,24 @@ namespace CodeTur.Dominio.Commands.Usuario
 {
     public class AlterarSenha : Notifiable, ICommand
     {
-        public string Email { get; private set; }
+        public AlterarSenha()
+        {
+
+        }
+        public AlterarSenha(Guid idUsuario, string email)
+        {
+            IdUsuario = idUsuario;
+            Senha = email;
+        }
+        public Guid IdUsuario { get; set; }
+        public string Senha { get; set; }
         public void Validar()
         {
             AddNotifications(new Contract()
-                .Requires()
-                .IsEmail(Email, "Email", "Informe um email valido")
-                );
+                 .Requires()
+                 .AreNotEquals(IdUsuario, Guid.Empty, "IdUsuario", "Id do usuário inválido")
+                 .HasMinLen(Senha, 6, "Senha", "Senha deve ter no minímo 6 caracteres")
+             );
         }
     }
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CodeTur.Api</name>
+    </assembly>
+    <members>
+        <member name="M:CodeTur.Api.Controllers.PacoteController.Create(CodeTur.Dominio.Commands.Pacote.CriarPacoteCommand,CodeTur.Dominio.Handlers.Pacotes.CriarPacoteCommandHandle)">
+            <summary>
+            Este metodo Cria Pacotes
+            </summary>
+            <returns>Retorna o Pacote</returns>
+            <response code="200">Retorna o item cadastrados</response>
+        </member>
+    </members>
+</doc>

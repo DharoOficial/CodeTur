@@ -1,12 +1,8 @@
-﻿using CodeTur.Comum.Handlers.Contracts;
-using CodeTur.Comum.Querries;
+﻿using CodeTur.Comum.Commands;
+using CodeTur.Comum.Handlers.Contracts;
 using CodeTur.Dominio.Queries.Pacote;
 using CodeTur.Dominio.Repositorios;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CodeTur.Dominio.Handlers.Pacotes
 {
@@ -19,7 +15,7 @@ namespace CodeTur.Dominio.Handlers.Pacotes
             _pacotesRespositorio = pacotesRespositorio;
         }
 
-        public IQueryResult Handler(ListarPacotesQuery query)
+        public ICommandResult Handle(ListarPacotesQuery query)
         {
             var pacotes = _pacotesRespositorio.Listar(query.Ativo);
 
@@ -33,14 +29,12 @@ namespace CodeTur.Dominio.Handlers.Pacotes
                         Titulo = x.Titulo,
                         Descricao = x.Descricao,
                         Ativo = x.Ativo,
-                        DataCriacao = x.DataCriacao,
                         QuantidadeComentario = x.Comentarios.Count
-
                     };
                 }
             );
 
-            return new GenericQueryResult(true, "Pacotes", retornoPacotes);
+            return new GerencCommandResult(true, "Pacotes", retornoPacotes);
         }
     }
 }

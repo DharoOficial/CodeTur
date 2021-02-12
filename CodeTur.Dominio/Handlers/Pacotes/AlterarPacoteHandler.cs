@@ -18,7 +18,7 @@ namespace CodeTur.Dominio.Handlers.Pacotes
             _respositorio = respositorio;
         }
 
-        public ICommandResult Handler(AlterarPacoteCommand command)
+        public ICommandResult Handle(AlterarPacoteCommand command)
         {
 
             command.Validar();

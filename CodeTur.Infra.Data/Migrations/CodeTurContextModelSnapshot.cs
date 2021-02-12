@@ -17,7 +17,7 @@ namespace CodeTur.Infra.Data.Migrations
             modelBuilder
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.2");
+                .HasAnnotation("ProductVersion", "5.0.3");
 
             modelBuilder.Entity("CodeTur.Dominio.Entidades.Comentario", b =>
                 {
@@ -121,8 +121,8 @@ namespace CodeTur.Infra.Data.Migrations
 
                     b.Property<string>("Senha")
                         .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("varchar(60)");
+                        .HasMaxLength(1000)
+                        .HasColumnType("varchar(MAX)");
 
                     b.Property<string>("Telefone")
                         .HasMaxLength(11)

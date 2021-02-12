@@ -36,7 +36,7 @@ namespace CodeTur.Dominio.Commands.Usuario
                 .HasMaxLen(Nome, 40, "Nome", "O nome deve ter no minimo 3 linhas")
                 .IsEmail(Email, "Email", "Informe um email valido")
                 .HasMinLen(Senha, 6, "Senha", "A Senha deve ter no minimo 3 linhas")
-                .HasMaxLen(Senha, 12, "Senha", "A Senha deve ter no minimo 3 linhas")
+                .HasMaxLen(Senha, 1000, "Senha", "A Senha deve ter no minimo 3 linhas")
                 );
         }
     }

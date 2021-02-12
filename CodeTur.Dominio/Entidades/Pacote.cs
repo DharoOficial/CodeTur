@@ -59,33 +59,7 @@ namespace CodeTur.Dominio.Entidades
             }
         }
 
-
-        public void AtivarPacote()
-        {
-            Ativo = true;
-        }
-
-        public void DesativarPacote()
-        {
-            Ativo = false;
-        }
-
-        public void AtualizaPacote(string titulo, string descricao)
-        {
-            AddNotifications(new Contract()
-                .Requires()
-                .IsNotNullOrEmpty(titulo, "Titulo", "Informe o Título do pacote")
-                .IsNotNullOrEmpty(descricao, "Descricao", "Informe o Descrição do pacote")
-            );
-
-            if (Valid)
-            {
-                Titulo = titulo;
-                Descricao = descricao;
-            }
-        }
-
-        public void AtualizaImagem(string imagem)
+        public void AlterarImagem(string imagem)
         {
             AddNotifications(new Contract()
                 .Requires()
@@ -94,6 +68,12 @@ namespace CodeTur.Dominio.Entidades
 
             if (Valid)
                 Imagem = imagem;
+        }
+
+
+        public void AlterarStatus(bool ativo)
+        {
+            Ativo = ativo;
         }
     }
 }
