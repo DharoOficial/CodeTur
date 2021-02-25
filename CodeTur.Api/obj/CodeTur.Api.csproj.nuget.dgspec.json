@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Api\\CodeTur.Api.csproj": {}
+    "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Api\\CodeTur.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Api\\CodeTur.Api.csproj": {
+    "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Api\\CodeTur.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Api\\CodeTur.Api.csproj",
+        "projectUniqueName": "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Api\\CodeTur.Api.csproj",
         "projectName": "CodeTur.Api",
-        "projectPath": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Api\\CodeTur.Api.csproj",
-        "packagesPath": "C:\\Users\\mercatudo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Api\\obj\\",
+        "projectPath": "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Api\\CodeTur.Api.csproj",
+        "packagesPath": "C:\\Users\\23788831880\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mercatudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\23788831880\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,14 +28,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj": {
-                "projectPath": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj"
+              "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj": {
+                "projectPath": "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj"
               },
-              "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Dominio\\CodeTur.Dominio.csproj": {
-                "projectPath": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Dominio\\CodeTur.Dominio.csproj"
+              "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Dominio\\CodeTur.Dominio.csproj": {
+                "projectPath": "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Dominio\\CodeTur.Dominio.csproj"
               },
-              "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Infra.Data\\CodeTur.Infra.Data.csproj": {
-                "projectPath": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Infra.Data\\CodeTur.Infra.Data.csproj"
+              "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Infra.Data\\CodeTur.Infra.Data.csproj": {
+                "projectPath": "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Infra.Data\\CodeTur.Infra.Data.csproj"
               }
             }
           }
@@ -99,21 +99,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj": {
+    "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj",
+        "projectUniqueName": "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj",
         "projectName": "CodeTur.Comum",
-        "projectPath": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj",
-        "packagesPath": "C:\\Users\\mercatudo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Comum\\obj\\",
+        "projectPath": "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj",
+        "packagesPath": "C:\\Users\\23788831880\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Comum\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mercatudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\23788831880\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -171,21 +171,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Dominio\\CodeTur.Dominio.csproj": {
+    "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Dominio\\CodeTur.Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Dominio\\CodeTur.Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Dominio\\CodeTur.Dominio.csproj",
         "projectName": "CodeTur.Dominio",
-        "projectPath": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Dominio\\CodeTur.Dominio.csproj",
-        "packagesPath": "C:\\Users\\mercatudo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Dominio\\obj\\",
+        "projectPath": "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Dominio\\CodeTur.Dominio.csproj",
+        "packagesPath": "C:\\Users\\23788831880\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mercatudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\23788831880\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -199,8 +199,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj": {
-                "projectPath": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj"
+              "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj": {
+                "projectPath": "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Comum\\CodeTur.Comum.csproj"
               }
             }
           }
@@ -239,21 +239,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Infra.Data\\CodeTur.Infra.Data.csproj": {
+    "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Infra.Data\\CodeTur.Infra.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Infra.Data\\CodeTur.Infra.Data.csproj",
+        "projectUniqueName": "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Infra.Data\\CodeTur.Infra.Data.csproj",
         "projectName": "CodeTur.Infra.Data",
-        "projectPath": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Infra.Data\\CodeTur.Infra.Data.csproj",
-        "packagesPath": "C:\\Users\\mercatudo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Infra.Data\\obj\\",
+        "projectPath": "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Infra.Data\\CodeTur.Infra.Data.csproj",
+        "packagesPath": "C:\\Users\\23788831880\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Infra.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mercatudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\23788831880\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -267,8 +267,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Dominio\\CodeTur.Dominio.csproj": {
-                "projectPath": "C:\\Users\\mercatudo\\Documents\\trabs_API\\CodeTur\\CodeTur\\CodeTur.Dominio\\CodeTur.Dominio.csproj"
+              "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Dominio\\CodeTur.Dominio.csproj": {
+                "projectPath": "C:\\Users\\23788831880\\Documents\\CodeTur_GitHub\\CodeTur\\CodeTur.Dominio\\CodeTur.Dominio.csproj"
               }
             }
           }
@@ -319,7 +319,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

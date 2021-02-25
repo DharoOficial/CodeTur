@@ -25,7 +25,6 @@ namespace CodeTur.Api.Controllers
         /// </summary>
         /// <returns>Retorna o Pacote</returns>
         /// <response code="200">Retorna o item cadastrados</response>
-        [Route("Create")]
         [HttpPost]
         [Authorize(Roles = "Admin")]        
         public GerencCommandResult Create(
@@ -35,7 +34,6 @@ namespace CodeTur.Api.Controllers
             return (GerencCommandResult)handle.Handle(command);
         }
 
-        [Route("Update")]
         [HttpPut("{id}")]
         [Authorize(Roles = "Admin")]
         public  GerencCommandResult Update (Guid id,
@@ -50,7 +48,6 @@ namespace CodeTur.Api.Controllers
             return (GerencCommandResult)handler.Handle(command);
         }
 
-        [Route("{id}/image")]
         [HttpPut("{id}/image")]
         [Authorize(Roles = "Admin")]
         public GerencCommandResult UpdateImage(Guid id,
@@ -66,7 +63,6 @@ namespace CodeTur.Api.Controllers
             return (GerencCommandResult)handler.Handle(command);
         }
 
-        [Route("{id}/status")]
         [HttpPut("{id}/status")]
         [Authorize(Roles = "Admin")]
         public GerencCommandResult UpdateStatus(Guid id,
@@ -82,8 +78,8 @@ namespace CodeTur.Api.Controllers
             return (GerencCommandResult)handler.Handle(command);
         }
 
-        [Route("GetAll")]
-        [HttpPost()]
+    
+        [HttpGet()]
         [Authorize]
         public  GenericQueryResult GetAll([FromServices] ListarPacoteQueryHandlers handle)
         {
@@ -97,7 +93,6 @@ namespace CodeTur.Api.Controllers
 
         }
 
-        [Route("GetById/{id}")]
         [HttpGet("{id}")]
         [Authorize]
         public GerencCommandResult GetById(Guid id, [FromServices] BuscarPacotePorIdQuerryHandler handle)

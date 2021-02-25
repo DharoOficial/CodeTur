@@ -1,15 +1,13 @@
-﻿{
-  "$schema": "http://json.schemastore.org/launchsettings.json",
+{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": " ",
-      //192.168.56.1 senai
-      //192.168.15.14 casa
-      "sslPort": 44339
+      "applicationUrl": "http://192.168.5.27/",
+      "sslPort": 44315
     }
   },
+  "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
@@ -21,13 +19,13 @@
     },
     "CodeTur.Api": {
       "commandName": "Project",
-      "dotnetRunMessages": "true",
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "https://192.168.15.14:5001;http://192.168.15.14:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "dotnetRunMessages": "true",
+      "applicationUrl": "https://192.168.5.27:5001;http://192.168.5.27:5000"
     }
   }
 }
